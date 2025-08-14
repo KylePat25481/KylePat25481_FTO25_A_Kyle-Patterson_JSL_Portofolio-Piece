@@ -17,18 +17,22 @@
       <div id="side-logo-div">
         <img id="logo" src="./assets/logo-light.svg" alt="logo-light" />
       </div>
-    <body>
-    <button id="theme-switch">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=dark_mode" />
-      
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=light_mode" />
-    </button>
+      <div id="side-logo-div-darkmode">
+        <img id="logo-darkmode" src="./assets/logo-dark.svg" alt="logo-dark" />
       </div>
-      <button id="sidebar-toggle-btn" class="desktop-only">☰</button>
+    <body>
+    <input type="checkbox" id="theme-switch" class="theme-switch" />
+    <label for="theme-switch" class="theme-switch-label">
+      </div>
       <div class="boards-nav-links-div" id="boards-nav-links-div">
         <h4 id="headline-sidepanel">ALL BOARDS (1)</h4>
         <button class="board-btn">Launch Career</button>
       </div>
+      <button id="sidebar-toggle" class="sidebar-toggle">
+      <div class="hide-sidebar-btn">
+        <span>Hide Sidebar</span>
+      </div>
+    </button>
     </nav>
 
     <!-- Main Layout: Header with board title, add task button, and main content area for task columns. -->
@@ -46,9 +50,6 @@
         </div>
         <button id="add-new-task-btn" class="primary-btn">
           + Add New Task
-        </button>
-        <!-- ⬇️ mobile sidebar -->
-        <button id="mobile-menu-btn" class="mobile-only">☰
         </button>
       </header>
 
@@ -85,7 +86,7 @@
       </div>
     </div>
     <!-- Modal: Displays each tasks details when the task is clicked -->
-    <dialog id="task-modal">
+        <dialog id="task-modal">
       <form method="dialog" id="task-form">
         <div class="modal-header">
           <h3>Task</h3>

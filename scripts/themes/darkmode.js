@@ -17,3 +17,24 @@ themeSwitch.addEventListener("click", ()=>{
     darkmode = localStorage.getItem('darkmode')
     darkmode !=="active" ? enableDarkmode() : disableDarkmode()
 })
+
+export function initThemeToggle() {
+  const toggle = document.querySelector("#theme-toggle");
+  toggle.addEventListener("change", () => {
+    document.body.classList.toggle("dark-theme", toggle.checked);
+    localStorage.setItem("theme", toggle.checked ? "dark" : "light");
+  })
+
+  // Load saved theme
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-theme");
+    toggle.checked = true;
+  }
+}
+  // Save theme choice
+  localStorage.setItem(
+    'theme',
+    document.body.classList.contains('dark-theme') ? 'dark' : 'light'
+  );
+

@@ -78,7 +78,7 @@ function ensureEditButtons(form) {
     saveBtn.type = "button";
     saveBtn.className = "save-task-btn";
     saveBtn.textContent = "Save";
-    saveBtn.style.cssText = "padding:10px 16px;border-radius:8px;border:0;background:#635fc7;color:#fff;font-weight:600;cursor:pointer;";
+    saveBtn.style.cssText = " flex: 1; padding: 12px; border-radius: 8px; border: 0; background: #635fc7; color: #fff; font-weight: 600; cursor: pointer";
     footer.appendChild(saveBtn);
 
     saveBtn.addEventListener("click", () => {
@@ -99,7 +99,7 @@ function ensureEditButtons(form) {
     delBtn.type = "button";
     delBtn.className = "delete-task-btn";
     delBtn.textContent = "Delete";
-    delBtn.style.cssText = "padding:10px 16px;border-radius:8px;border:0;background:#EA5555;color:#fff;font-weight:600;cursor:pointer;";
+    delBtn.style.cssText = " flex: 1; padding: 12px; border-radius: 8px; border: 0; background: #EA5555; color: #fff; font-weight: 600; cursor: pointer;"
     footer.appendChild(delBtn);
 
     delBtn.addEventListener("click", () => {

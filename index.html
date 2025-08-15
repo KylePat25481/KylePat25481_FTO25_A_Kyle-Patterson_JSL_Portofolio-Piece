@@ -36,11 +36,35 @@
         <h4 id="headline-sidepanel">ALL BOARDS (1)</h4>
         <button class="board-btn">Launch Career</button>
       </div>
-      <button id="sidebar-toggle" class="sidebar-toggle">
-      <div class="hide-sidebar-btn"><img src="./assets/icon-hide-sidebar.svg" alt="hide-sidebar-icon" />
-        <span>Hide Sidebar</span>
-      </div>
-    </button>
+      
+<!-- Toggle (stays in the same place) -->
+<div class="navigation" id="sidebar-toggle-container">
+  <button
+    class="sidebar-toggle"
+    id="sidebar-toggle-btn"
+    aria-controls="side-bar-div"
+    aria-expanded="true"
+    data-state="open"
+  >
+    <img id="sidebar-toggle-icon" src="./assets/icon-hide-sidebar.svg" alt="hide-sidebar-icon" />
+    <span id="sidebar-toggle-label">Hide Sidebar</span>
+  </button>
+</div>
+<!-- Toggle (stays in the same place) -->
+<div class="navigation" id="sidebar-toggle-container">
+  <button class="sidebar-toggle hidden"  id="show-sidebar-btn" aria-controls="side-bar-div" aria-expanded="false" data-state="closed">
+    <img id="sidebar-toggle-icon" src="./assets/icon-show-sidebar.svg" alt="show-sidebar-icon" />
+    <span id="sidebar-toggle-label">Show Sidebar</span>
+  </button>
+</div>
+
+</div>
+
+<!-- Sidebar -->
+<div id="side-bar-div" class="side-bar">
+  <!-- sidebar content here -->
+</div>
+
     <!-- Floating Show Sidebar Button (outside sidebar, near footer or end of body) -->
 <div class="show-sidebar-btn">
   <img src="./assets/icon-show-sidebar.svg" alt="show-sidebar-icon" />
@@ -56,6 +80,7 @@
             alt="logo-mobile"
             class="logo-mobile"
           />
+
           <h2 class="header-board-name" id="header-board-name">
             Launch Career
           </h2>
@@ -72,6 +97,7 @@
             <div id="todo-head-div" class="column-head-div">
               <span class="dot" id="todo-dot"></span>
               <h4 id="toDoText" class="columnHeader">TODO (2)</h4>
+              <div class="task-priority"></div>
             </div>
             <!-- Tasks container for TODO -->
             <div class="tasks-container"></div>
@@ -81,6 +107,7 @@
             <div id="doing-head-div" class="column-head-div">
               <span class="dot" id="doing-dot"></span>
               <h4 id="doingText" class="columnHeader">DOING (2)</h4>
+              <div class="task-priority"></div>
             </div>
             <!-- Tasks container for DOING -->
             <div class="tasks-container"></div>
@@ -90,6 +117,7 @@
             <div id="done-head-div" class="column-head-div">
               <span class="dot" id="done-dot"></span>
               <h4 id="doneText" class="columnHeader">DONE (2)</h4>
+              <div class="task-priority"></div>
             </div>
             <!-- Tasks container for DONE -->
             <div class="tasks-container"></div>
@@ -118,6 +146,12 @@
           <option value="todo">todo</option>
           <option value="doing">doing</option>
           <option value="done">done</option>
+        </select>
+        <label for="task-priority">Priority</label>
+        <select id="task-priority" name="priority" required>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
         </select>
       </form>
     </dialog>

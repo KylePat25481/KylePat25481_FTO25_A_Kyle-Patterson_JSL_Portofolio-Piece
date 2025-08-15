@@ -38,3 +38,16 @@ export function initThemeToggle() {
     document.body.classList.contains('dark-theme') ? 'dark' : 'light'
   );
 
+const logo = document.querySelector(".logo-img"); // Your logo image element
+
+const updateLogoForTheme = () => {
+    if (document.body.classList.contains("darkmode")) {
+        logo.src = "assets/logo-dark.svg";
+    } else {
+        logo.src = "assets/logo-light.svg";
+    }
+};
+
+// Run on load + toggle
+updateLogoForTheme();
+themeSwitch.addEventListener("click", updateLogoForTheme);

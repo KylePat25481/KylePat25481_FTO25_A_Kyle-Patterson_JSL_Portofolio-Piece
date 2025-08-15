@@ -52,3 +52,38 @@ export function deleteTaskById(id) {
   saveTasksToStorage(tasks);
   renderTasks(tasks);
 }
+
+// Priority Label + Sorting
+function updateTaskPriorities() {
+  const tasks = Array.from(document.querySelectorAll(".task-modal"));
+
+  tasks.forEach(task => {
+    const priority = task.dataset.priority; // simple, medium, difficult
+    const priorityDiv = task.querySelector(".task-priority");
+
+    // Set label & color
+    if (priority === "simple") {
+      priorityDiv.textContent = "Priority: Low";
+      priorityDiv.className = "task-priority low";
+    } else if (priority === "medium") {
+      priorityDiv.textContent = "Priority: Medium";
+      priorityDiv.className = "task-priority medium";
+    } else if (priority === "difficult") {
+      priorityDiv.textContent = "Priority: High";
+      priorityDiv.className = "task-priority high";
+    }
+  });
+
+  // Sort tasks by priority order
+  const priorityOrder = { high: 1, medium: 2, low: 3 };
+  tasks.sort((a, b) => priorityOrder[a.dataset.priority] - priorityOrder[b.dataset.priority]);
+
+  // Re-append tasks in sorted order
+  const parent = tasks[0]?.parentElement;
+  if (parent) {
+    tasks.forEach(task => parent.appendChild(task));
+  }
+}
+
+// Run on page load
+updateTaskPriorities();

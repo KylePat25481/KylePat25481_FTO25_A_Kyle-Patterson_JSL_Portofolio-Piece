@@ -50,19 +50,3 @@ document.addEventListener("DOMContentLoaded", () => {
         showBtn.style.display = "none";
     });
 });
-
-const sidebar = document.querySelector('.sidebar');
-const hideSidebarBtn = document.querySelector('.sidebar-toggle');
-const showSidebarBtn = document.querySelector('.sidebar-toggle'); // This appears when hidden
-
-// Hide sidebar
-hideSidebarBtn.addEventListener('click', () => {
-    sidebar.classList.add('hidden'); // Hide sidebar
-    showSidebarBtn.style.display = 'flex'; // Show "show" button
-});
-
-// Show sidebar
-showSidebarBtn.addEventListener('click', () => {
-    sidebar.classList.remove('hidden'); // Show sidebar
-    showSidebarBtn.style.display = 'none'; // Hide "show" button
-});

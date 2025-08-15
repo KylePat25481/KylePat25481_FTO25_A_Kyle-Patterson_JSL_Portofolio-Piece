@@ -35,12 +35,11 @@
   height: 30px;
   background-color: #ebebeb;
   border-radius: 30px;
-  position: relative;
+  position: absolute;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  position: absolute;
   bottom: 160px;
-  left: 100px;
+  left: 75px;
 
 
 }
@@ -120,30 +119,39 @@ body {
   height: 100vh;
 }
 
-/* Hide Sidebar Button Styling */
+/* Utility */
+.hidden { display: none !important; }
+
+/* Shared pill style (matches Figma) */
 .sidebar-toggle {
   font-family: inherit;
   display: flex;
   align-items: center;
-  gap: 10px; /* Space between icon and text */
+  gap: 10px;
   background-color: #f4f7fd;
   color: #726aff;
   border: none;
-  border-radius: 0 100px 100px 0; /* Pill shape only on right side */
+  border-radius: 0 100px 100px 0; /* right-side pill */
   height: 48px;
   width: 276px;
   padding: 28px 12px 28px 50px;
   font-size: 0.9375rem;
   font-weight: bold;
   cursor: pointer;
-  overflow: hidden; /* Prevents overflowed text/icons from showing */
+  overflow: hidden;
   position: relative;
   bottom: -270px;
-
 }
 
-.sidebar-toggle:hover {
-    border-radius: 0 100px 100px 0;
+/* Mirror the pill for the "Show" button to match Figma */
+.sidebar-toggle.show {
+  border-radius: 100px 0 0 100px; /* left-side pill */
+  padding: 28px 50px 28px 12px;   /* reverse padding for icon placement */
+}
+
+/* Sidebar hidden state */
+.side-bar.hidden { 
+  display: none; 
 }
 
 /* Dark Mode Styling */
@@ -168,10 +176,10 @@ body {
     gap: 10px;
 }
 
-.show-sidebar-btn img {
-    width: 20px;
-    height: 20px;
+.sidebar-toggle-hidden {
+  display: none !important;
 }
+
 
 /* Dark Mode Floating Button */
 body.dark-mode .show-sidebar-btn {
@@ -437,6 +445,19 @@ dialog {
   color: #000000;
   border: 1px solid #555;
 }
+
+/* Priority Colors */
+.task-priority {
+  margin-top: 5px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  color: white;
+  display: inline-block;
+}
+.task-priority.low { background-color: green; }
+.task-priority.medium { background-color: orange; }
+.task-priority.high { background-color: red; }
 
 /* Header */
 .modal-header {

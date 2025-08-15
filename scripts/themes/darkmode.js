@@ -43,8 +43,6 @@ const logo = document.querySelector("side-logo"); // Your logo image element
 const updateLogoForTheme = () => {
     if (document.body.classList.contains("darkmode")) {
         logo.src = "./assets/logo-dark.svg";
-    } else {
-        logo.src = "./assets/logo-light.svg";
     }
 };
 

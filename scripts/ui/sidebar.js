@@ -30,23 +30,4 @@ export function setupSidebarToggle() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    const sidebar = document.querySelector(".sidebar");
-    const hideBtn = document.querySelector(".hide-sidebar-btn");
-    const showBtn = document.createElement("div");
 
-    // Floating button for showing sidebar
-    showBtn.classList.add("show-sidebar-btn");
-    showBtn.innerHTML = `<img src="assets/icon-show-sidebar.svg" alt="Show Sidebar">`;
-    document.body.appendChild(showBtn);
-
-    hideBtn.addEventListener("click", () => {
-        sidebar.style.display = "none";
-        showBtn.style.display = "block";
-    });
-
-    showBtn.addEventListener("click", () => {
-        sidebar.style.display = "flex";
-        showBtn.style.display = "none";
-    });
-});

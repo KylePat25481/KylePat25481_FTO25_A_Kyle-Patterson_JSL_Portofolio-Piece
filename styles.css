@@ -41,6 +41,8 @@
   position: absolute;
   bottom: 140px;
   left: 75px;
+
+
 }
 
 /* Slider knob */
@@ -147,7 +149,7 @@ body {
 }
 
 /* Dark Mode Styling */
-.darkmode #sidebar-toggle {
+.darkmode #theme-switch-toggle {
     color: #726aff;
 }
 
@@ -409,6 +411,33 @@ dialog {
   background-color: #fff;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   /*font-family: "Plus Jakarta Sans", sans-serif;*/
+}
+.darkmode #task-modal{
+  background-color: #2b2c37;
+  color: #fff;
+}
+
+.darkmode .modal {
+  background-color: #2b2c37;
+  color: #fff;
+}
+
+.darkmode .modal input,
+.darkmode .modal textarea,
+.darkmode #task-status {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #555;
+}
+
+.darkmode .modal-header {
+  color: #ffffff
+}
+
+.darkmode #select-status {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #555;
 }
 
 /* Header */
@@ -697,3 +726,11 @@ textarea {
     padding-bottom: 0;
   }
 }
+
+  #board-btn {
+    display: none
+  }
+
+  #header-board-name {
+    display: none;
+  }
